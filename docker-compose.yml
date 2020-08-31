@@ -11,6 +11,9 @@ services:
       - '${WEB_PORT}:80'
     depends_on:
       - database_server
+    environment:
+      - PHP_MEM_LIMIT=4048M
+      - COMPOSER_MEMORY_LIMIT=4048M
 
   database_server:
     image: mysql:5.7
